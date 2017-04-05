@@ -11,6 +11,11 @@
             <menu>
 
         <item
+            android:id="@+id/nav_TheLoai"
+            android:icon="@drawable/ic_theloai"
+            android:title="Thể loại" />
+
+        <item
             android:id="@+id/nav_infoTK"
             android:icon="@drawable/ic_action_name"
             android:title="Thông tin tài khoản" />

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.admin.bookstore.Adapters.AdapterSach;
@@ -27,7 +28,7 @@ public class SachNBFragments extends Fragment{
 
     public AdapterSach adapterSach;
     public static ArrayList<Sach> sachArrayList = new ArrayList<>();
-    public DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
+    public DatabaseReference mData;
 
     public SachNBFragments() {
     }
@@ -37,11 +38,12 @@ public class SachNBFragments extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_sach_nb,null);
 
+        // list sách
         ListView listView = (ListView) v.findViewById(R.id.lvListNB);
-        //mData = FirebaseDatabase.getInstance().getReference();
-
+        mData = FirebaseDatabase.getInstance().getReference();
         adapterSach = new AdapterSach(getActivity(), R.layout.hienthsach, sachArrayList );
         listView.setAdapter(adapterSach);
+
         mData.child("Sach").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -58,6 +60,26 @@ public class SachNBFragments extends Fragment{
 
             }
         });
+
+        //slideshow
+        int i = 0;
+        ImageView slide = (ImageView) v.findViewById(R.id.imgSlideshow);
+//        while (i < 10){
+//            try {
+//                Thread.sleep(5000);
+//                Random ran = new Random();
+//                int nn = ran.nextInt(4);
+//                Toast.makeText(getActivity(), String.valueOf(nn).toString(), Toast.LENGTH_LONG).show();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//            Random ran = new Random();
+//            int nn = ran.nextInt(4);
+//            Toast.makeText(getActivity(), String.valueOf(nn).toString(), Toast.LENGTH_LONG).show();
+//            i++;
+//            if (i > 1)
+//                break;
+//        }
         return v;
     }
 
