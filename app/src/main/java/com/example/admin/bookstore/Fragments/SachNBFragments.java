@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.admin.bookstore.Adapters.AdapterSach;
@@ -60,26 +59,6 @@ public class SachNBFragments extends Fragment{
 
             }
         });
-
-        //slideshow
-        int i = 0;
-        ImageView slide = (ImageView) v.findViewById(R.id.imgSlideshow);
-//        while (i < 10){
-//            try {
-//                Thread.sleep(5000);
-//                Random ran = new Random();
-//                int nn = ran.nextInt(4);
-//                Toast.makeText(getActivity(), String.valueOf(nn).toString(), Toast.LENGTH_LONG).show();
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            Random ran = new Random();
-//            int nn = ran.nextInt(4);
-//            Toast.makeText(getActivity(), String.valueOf(nn).toString(), Toast.LENGTH_LONG).show();
-//            i++;
-//            if (i > 1)
-//                break;
-//        }
         return v;
     }
 
