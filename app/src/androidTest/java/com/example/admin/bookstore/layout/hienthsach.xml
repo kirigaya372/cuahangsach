@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -38,12 +36,6 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_red_light"
-                android:text="TextView" />
-
-            <me.grantland.widget.AutofitTextView
-                android:id="@+id/txtTheLoai"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="TextView" />
 
             <me.grantland.widget.AutofitTextView

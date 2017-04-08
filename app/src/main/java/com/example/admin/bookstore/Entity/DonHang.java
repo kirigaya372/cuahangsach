@@ -5,40 +5,41 @@ package com.example.admin.bookstore.Entity;
  */
 
 public class DonHang {
-    private String tenKH;
-    private String tinhTrang;
-    private String tongGiaTien;
+    private String TenKH;
+    private String TinhTrang;
+    private String TongGiaTien;
 
-    public DonHang() {
+    public DonHang(){
+
     }
 
-    public DonHang(String TenKH, String TinhTrang, String TongGiaTien) {
-        this.tenKH = TenKH;
-        this.tinhTrang = TinhTrang;
-        this.tongGiaTien = TongGiaTien;
+    public DonHang(String tenKH, String tinhTrang, String tongGiaTien) {
+        TenKH = tenKH;
+        TinhTrang = tinhTrang;
+        TongGiaTien = tongGiaTien;
     }
 
     public String getTenKH() {
-        return tenKH;
+        return TenKH;
     }
 
     public void setTenKH(String tenKH) {
-        this.tenKH = tenKH;
+        TenKH = tenKH;
     }
 
     public String getTinhTrang() {
-        return tinhTrang;
+        return TinhTrang;
     }
 
     public void setTinhTrang(String tinhTrang) {
-        this.tinhTrang = tinhTrang;
+        TinhTrang = tinhTrang;
     }
 
     public String getTongGiaTien() {
-        return tongGiaTien;
+        return TongGiaTien;
     }
 
     public void setTongGiaTien(String tongGiaTien) {
-        this.tongGiaTien = tongGiaTien;
+        TongGiaTien = tongGiaTien;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.admin.bookstore.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity
         tabHost = (TabHost) findViewById(android.R.id.tabhost);
         tabHost.setup();
 
-        String[] tabName = {"Sách nổi bật","Sách bán chạy", "Sách ngẫu nhiên"};
+        String[] tabName = {"Sách mới","Sách bán chạy", "Sách ngẫu nhiên"};
 
         for (int i=0;i<tabName.length;i++){
             TabHost.TabSpec tabSpec = tabHost.newTabSpec(tabName[i]);
@@ -131,6 +132,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_infoTK) {
             Toast.makeText(getApplicationContext(),"Thông tin tài khoản",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_shopping) {
+            Intent i = new Intent(MainActivity.this,Giohang.class);
+            startActivity(i);
             Toast.makeText(getApplicationContext(),"Giỏ hàng",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_info) {
             Toast.makeText(getApplicationContext(),"Infomation App",Toast.LENGTH_LONG).show();

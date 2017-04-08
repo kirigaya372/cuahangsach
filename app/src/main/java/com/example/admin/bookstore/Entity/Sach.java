@@ -7,6 +7,7 @@ package com.example.admin.bookstore.Entity;
 public class Sach {
     private String hinh;
     private String tenSach;
+    private String theLoai;
     private String gia;
     private String tenTG;
     private String nhaXB;
@@ -17,12 +18,13 @@ public class Sach {
 
     }
 
-    public Sach( String Hinh,String TenSach, String Gia, String TenTG, String NhaXB, String TinhTrang, String TomTat) {
+    public Sach( String Hinh,String TenSach,String TheLoai, String Gia, String TenTG, String NhaXB, String TinhTrang, String TomTat) {
         hinh = Hinh;
         tenSach = TenSach;
         tenTG = TenTG;
         tomTat = TomTat;
         nhaXB = NhaXB;
+        theLoai = TheLoai;
         tinhTrang = TinhTrang;
         gia = Gia;
     }
@@ -81,5 +83,13 @@ public class Sach {
 
     public void setTenSach(String tenSach) {
         this.tenSach = tenSach;
+    }
+
+    public String getTheLoai() {
+        return theLoai;
+    }
+
+    public void setTheLoai(String theLoai) {
+        this.theLoai = theLoai;
     }
 }

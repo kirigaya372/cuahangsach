@@ -48,7 +48,7 @@ public class SachNBFragments extends Fragment{
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dsp: dataSnapshot.getChildren()) {
                     Sach sach = dsp.getValue(Sach.class);
-                    sachArrayList.add(new Sach(sach.getHinh(), dsp.getKey().toString(),sach.getGia(), sach.getNhaXB(),
+                    sachArrayList.add(new Sach(sach.getHinh(), dsp.getKey().toString(),sach.getTheLoai(),sach.getGia(), sach.getNhaXB(),
                             sach.getTenTG(), sach.getTinhTrang(), sach.getTomTat()));
                 }
                 adapterSach.notifyDataSetChanged();
