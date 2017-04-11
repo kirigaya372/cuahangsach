@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home2"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+
+        <item android:title="Communicate">
+            <menu>
+
+                <item
+                    android:id="@+id/nav_TheLoai2"
+                    android:icon="@drawable/ic_theloai"
+                    android:title="Thể loại" />
+
+                <item
+                    android:id="@+id/nav_infoTK2"
+                    android:icon="@drawable/ic_action_name"
+                    android:title="Thông tin tài khoản" />
+                <item
+                    android:id="@+id/nav_shopping2"
+                    android:icon="@drawable/ic_giohang"
+                    android:title="Giỏ hàng" />
+                <item
+                    android:id="@+id/nav_info2"
+                    android:icon="@drawable/ic_info"
+                    android:title="Thông tin App" />
+
+            </menu>
+        </item>
+    </group>
+
+</menu>

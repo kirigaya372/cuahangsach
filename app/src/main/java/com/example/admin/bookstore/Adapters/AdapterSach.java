@@ -2,6 +2,7 @@ package com.example.admin.bookstore.Adapters;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.admin.bookstore.Activity.ChiTietSachActivity;
 import com.example.admin.bookstore.Entity.DonHang;
 import com.example.admin.bookstore.Entity.DonHangSach;
 import com.example.admin.bookstore.Entity.HoaDon;
@@ -83,7 +85,9 @@ public class AdapterSach extends ArrayAdapter<Sach>{
             public void onClick(View v) {
                 s = new Sach();
                 s = arrayList.get(position);
-                Toast.makeText(context, String.valueOf(s.getTenSach()), Toast.LENGTH_LONG).show();
+                Intent i = new Intent(context, ChiTietSachActivity.class);
+                i.putExtra("SACH",String.valueOf(s.getTenSach()));
+                context.startActivity(i);
             }
         });
         btnDH.setOnClickListener(new View.OnClickListener() {

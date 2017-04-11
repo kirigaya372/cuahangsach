@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.bookstore.Activity.ChiTietSachActivity"
+    tools:showIn="@layout/app_bar_chi_tiet_sach">
+
+    <LinearLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_margin="5dp">
+
+            <ImageView
+                android:id="@+id/imgChiTiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/loading_image"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_gravity="center_horizontal"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1.5"
+            android:layout_marginLeft="5dp">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/txtTenSachChiTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_light"
+                android:gravity="center_horizontal"
+                android:text="TextView" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/txtTheLoaiChiTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/txtTenTGChiTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/txtNhaXBChiTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/txtGiaSachChiTiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btnDatHangChiTiet"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Đặt hàng"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_red_light">
+
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp">
+
+        <me.grantland.widget.AutofitTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giới thiệu"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="15pt"/>
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txtTomTat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

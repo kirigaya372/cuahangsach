@@ -6,7 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.admin.bookstore.Adapters.AdapterSach;
 import com.example.admin.bookstore.Entity.Sach;
@@ -57,6 +59,16 @@ public class SachNBFragments extends Fragment{
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Sach sa = new Sach();
+//                sa = sachArrayList.get(position);
+//                Toast.makeText(getContext(), String.valueOf(sa.getTenSach()).toString(), Toast.LENGTH_LONG ).show();
+                Toast.makeText(getContext(), String.valueOf(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });
         return v;
