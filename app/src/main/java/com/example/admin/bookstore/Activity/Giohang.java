@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.admin.bookstore.Adapters.AdapterHoaDon;
 import com.example.admin.bookstore.Entity.HoaDon;
@@ -21,11 +20,12 @@ import java.util.ArrayList;
 
 public class Giohang extends AppCompatActivity {
 
-    private ArrayList<HoaDon> hoaDons = new ArrayList<>();
+    public static ArrayList<HoaDon> hoaDons = new ArrayList<>();
     private ListView listView ;
     private AdapterHoaDon adapterHoaDon;
     private DatabaseReference mData;
     HoaDon hoaDon;
+    ArrayList<String> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +44,17 @@ public class Giohang extends AppCompatActivity {
         listView.setAdapter(adapterHoaDon);
 
 
-        mData.child("HoaDon").addValueEventListener(new ValueEventListener() {
+        mData.child("HoaDon").child("User").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                hoaDons.removeAll(hoaDons);
+                adapterHoaDon.notifyDataSetChanged();
+
+                //arrayList.add(dataSnapshot.getKey().toString());
                 for (DataSnapshot dsp: dataSnapshot.getChildren()){
                     hoaDon = dsp.getValue(HoaDon.class);
                     hoaDons.add(new HoaDon(hoaDon.getMaHD(),hoaDon.getTenKH(),hoaDon.getTenSach(),hoaDon.getSoLuong(),hoaDon.getTongGiaTien(),hoaDon.getTinhTrang()));
+                    //Toast.makeText(Giohang.this,String.valueOf(dsp.getKey().toString()),Toast.LENGTH_SHORT).show();
                 }
                 adapterHoaDon.notifyDataSetChanged();
             }
@@ -60,10 +65,11 @@ public class Giohang extends AppCompatActivity {
             }
         });
 
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(Giohang.this,"Chua lam xong ma click cai gi ?~~",Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
             }
         });
 

@@ -2,43 +2,69 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-    <!--<TextView-->
-        <!--android:id="@+id/txttenk"-->
-        <!--android:text="tenkh"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txthd"
-        android:text="MaHD"
-        android:textSize="12sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="12sp"
-        android:id="@+id/txttens"
-        android:text="tensach"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="12sp"
-        android:id="@+id/txtsl"
-        android:text="soluong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="12sp"
-        android:id="@+id/txttong"
-        android:text="tongtien"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="15sp"
-        android:id="@+id/txttrang"
-        android:text="tinhtrang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txthd"
+            android:text="MaHD"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txttens"
+            android:text="tensach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txtsl"
+            android:text="soluong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txttong"
+            android:text="tongtien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/txttrang"
+            android:text="tinhtrang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7">
+        <ImageView
+            android:id="@+id/settings_hoadon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/settings_icon"/>
+    </LinearLayout>
+    </LinearLayout>
+
 
 </LinearLayout>

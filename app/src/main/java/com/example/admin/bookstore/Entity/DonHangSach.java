@@ -7,13 +7,16 @@ package com.example.admin.bookstore.Entity;
 public class DonHangSach {
     private String gia;
     private String soLuong;
+    private String tinhTrangCT;
+
 
     public DonHangSach() {
     }
 
-    public DonHangSach(String Gia, String SoLuong) {
-        this.gia = Gia;
-        this.soLuong = SoLuong;
+    public DonHangSach(String gia, String soLuong, String tinhTrangCT) {
+        this.gia = gia;
+        this.soLuong = soLuong;
+        this.tinhTrangCT = tinhTrangCT;
     }
 
     public String getGia() {
@@ -30,5 +33,13 @@ public class DonHangSach {
 
     public void setSoLuong(String soLuong) {
         this.soLuong = soLuong;
+    }
+
+    public String getTinhTrangCT() {
+        return tinhTrangCT;
+    }
+
+    public void setTinhTrangCT(String tinhTrangCT) {
+        this.tinhTrangCT = tinhTrangCT;
     }
 }

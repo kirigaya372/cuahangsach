@@ -5,41 +5,51 @@ package com.example.admin.bookstore.Entity;
  */
 
 public class DonHang {
-    private String TenKH;
-    private String TinhTrang;
-    private String TongGiaTien;
+    private String tenKH;
+    private String ngàyDH;
+    private String tinhTrangHD;
+    private String tongGiaTien;
 
     public DonHang(){
 
     }
 
-    public DonHang(String tenKH, String tinhTrang, String tongGiaTien) {
-        TenKH = tenKH;
-        TinhTrang = tinhTrang;
-        TongGiaTien = tongGiaTien;
+    public DonHang(String tenKH, String ngàyDH, String tinhTrang, String tongGiaTien) {
+        this.tenKH = tenKH;
+        this.ngàyDH = ngàyDH;
+        this.tinhTrangHD = tinhTrang;
+        this.tongGiaTien = tongGiaTien;
     }
 
     public String getTenKH() {
-        return TenKH;
+        return tenKH;
     }
 
     public void setTenKH(String tenKH) {
-        TenKH = tenKH;
+        this.tenKH = tenKH;
+    }
+
+    public String getNgàyDH() {
+        return ngàyDH;
+    }
+
+    public void setNgàyDH(String ngàyDH) {
+        this.ngàyDH = ngàyDH;
     }
 
     public String getTinhTrang() {
-        return TinhTrang;
+        return tinhTrangHD;
     }
 
     public void setTinhTrang(String tinhTrang) {
-        TinhTrang = tinhTrang;
+        this.tinhTrangHD = tinhTrang;
     }
 
     public String getTongGiaTien() {
-        return TongGiaTien;
+        return tongGiaTien;
     }
 
     public void setTongGiaTien(String tongGiaTien) {
-        TongGiaTien = tongGiaTien;
+        this.tongGiaTien = tongGiaTien;
     }
 }

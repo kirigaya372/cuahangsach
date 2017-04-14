@@ -7,16 +7,24 @@
     android:orientation="vertical"
     tools:context="com.example.admin.bookstore.Activity.Giohang">
 
-    <TextView
-        android:text="Gio Hang"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="5dp" />
+        android:orientation="horizontal"
+        android:layout_weight="1" >
+
+        <TextView
+            android:text="Gio Hang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/use"

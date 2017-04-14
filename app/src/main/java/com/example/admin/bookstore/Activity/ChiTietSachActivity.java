@@ -39,7 +39,7 @@ public class ChiTietSachActivity extends AppCompatActivity
     AutofitTextView ten, theloai, tg, nxb, g, tt;
     ImageView img;
     Button btnDH;
-    DatabaseReference mData;
+    DatabaseReference mData,mData2;
     int i = 1;
     int tong,sum =0 ;
     HoaDon hoaDon = new HoaDon();
@@ -129,19 +129,67 @@ public class ChiTietSachActivity extends AppCompatActivity
                 btnDat.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        DatabaseReference mData;
-                        mData = FirebaseDatabase.getInstance().getReference();
 
-                        hoaDon.setMaHD(gethd());
-                        hoaDon.setTenKH("laytulucdangnhap");
-                        hoaDon.setTenSach(String.valueOf(s.getTenSach()));
-                        hoaDon.setSoLuong(String.valueOf(i));
-                        hoaDon.setTongGiaTien(String.valueOf(sum));
-                        hoaDon.setTinhTrang("Đang chờ");
+                        final ArrayList<HoaDon> arrayHD = new ArrayList<>();
+                        mData.child("HoaDon").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                ArrayList<String> keyHD = new ArrayList<String>();
+                                for(DataSnapshot dsp: dataSnapshot.getChildren()){
+                                    // lấy hash key
+                                    keyHD.add(dsp.getKey().toString());
 
-                        mData.child("HoaDon").push().setValue(hoaDon);
+                                    hoaDon = dsp.getValue(HoaDon.class);
+                                    arrayHD.add(new HoaDon(hoaDon.getMaHD(),hoaDon.getTenKH(),hoaDon.getTenSach(),hoaDon.getSoLuong(),hoaDon.getTongGiaTien(),hoaDon.getTinhTrang()));
+                                }
+
+                                HoaDon hoaDon = new HoaDon();
+                                for(int j=0; j<arrayHD.size();j++){
+                                    String sa = String.valueOf(s.getTenSach());
+
+                                    hoaDon = arrayHD.get(j);
+//                                    int sl = Integer.parseInt(hoaDon.getSoLuong());
+//                                    int tien = Integer.parseInt(hoaDon.getTongGiaTien());
+
+                                    // nếu tên sách đặt đã có trong giỏ hàng thì update
+                                    if(String.valueOf(hoaDon.getTenSach()).equals(sa)){
+//                                        mData2 = FirebaseDatabase.getInstance().getReference();
+//                                        sl +=i;
+//                                        tien += sum;
+//                                        hoaDon.setMaHD(hoaDon.getMaHD());
+//                                        hoaDon.setTenKH("laytulucdangnhap");
+//                                        hoaDon.setTenSach(String.valueOf(hoaDon.getTenSach()));
+//                                        hoaDon.setSoLuong(String.valueOf(sl));
+//                                        hoaDon.setTongGiaTien(String.valueOf(tien));
+//                                        hoaDon.setTinhTrang("Đang chờ");
+
+                                        //mData2.child("HoaDon").child(String.valueOf(keyHD.get(j))).setValue(hoaDon);
+                                        Toast.makeText(ChiTietSachActivity.this, "Bạn đã đặt hàng sách này rồi, hãy vào Giỏ hàng để xem chi tiết Giỏ hàng", Toast.LENGTH_SHORT).show();
+                                        break;
+                                    }else{
+                                        if(j == arrayHD.size() - 1 ) {
+                                            mData2 = FirebaseDatabase.getInstance().getReference();
+                                            hoaDon.setMaHD(gethd());
+                                            hoaDon.setTenKH("laytulucdangnhap");
+                                            hoaDon.setTenSach(String.valueOf(s.getTenSach()));
+                                            hoaDon.setSoLuong(String.valueOf(i));
+                                            hoaDon.setTongGiaTien(String.valueOf(sum));
+                                            hoaDon.setTinhTrang("Đang chờ");
+
+                                            mData2.child("HoaDon").push().setValue(hoaDon);
+                                            Toast.makeText(ChiTietSachActivity.this, "Đặt hàng thành công",Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+
                         dialog.dismiss();
-                        Toast.makeText(ChiTietSachActivity.this,"Dat hang thanh cong xin cho chung toi lien lac",Toast.LENGTH_LONG).show();
 
                     }
                 });
